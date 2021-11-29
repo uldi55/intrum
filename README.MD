@@ -11,7 +11,7 @@ much without any feedback to the end user. It needs some work to be usable.
 Not being able to send it for testing is also an obstacle.
 I for sure did once. Sorry...
 
-##How to run the tests
+### How to run the tests
 Running the tests is quite simple. Just get the solution and use the test runner to run them.
 They are built in a way so that all tests should be run always...
 Second test continues where first left and so on.
