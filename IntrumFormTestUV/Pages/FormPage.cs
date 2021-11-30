@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace IntrumFormTestUV.Pages
 {
-    public class FormPage: PageBase
+    public class FormPage : PageBase
     {
         public static IWebElement CloseFormButton(IWebDriver driver)
         {
@@ -24,13 +24,13 @@ namespace IntrumFormTestUV.Pages
         {
             return FindElementsByCss(driver, "div > div.umbraco-forms-field");//input fields name
         }
-        
+
         public static IWebElement CommentInputField(IWebDriver driver)
         {
             return FindElementByCss(driver, "div>textarea");
         }
 
-        public static void AnswerDropdownSelectedByValue(IWebDriver driver, string value="")
+        public static void AnswerDropdownSelectedByValue(IWebDriver driver, string value = "")
         {
             var dropdown = FindElementByCss(driver, "div>select");
             var selectedElement = new SelectElement(dropdown);
@@ -58,7 +58,8 @@ namespace IntrumFormTestUV.Pages
             w.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.umbraco-forms.missing-library")));
         }
 
-        public static void CloseSlide(IWebDriver driver) {
+        public static void CloseSlide(IWebDriver driver)
+        {
             CloseFormButton(driver).Click();
         }
         public static void FillFormWithBadOrMissingData(IWebDriver driver)
@@ -102,7 +103,7 @@ namespace IntrumFormTestUV.Pages
         }
         public static List<IWebElement> FormInputFieldsList(IWebDriver driver)
         {
-            var formFieldsList= Retry.Do(() => FormInputFields(driver).ToList(), TimeSpan.FromSeconds(2), 5);
+            var formFieldsList = Retry.Do(() => FormInputFields(driver).ToList(), TimeSpan.FromSeconds(2), 5);
             return formFieldsList;
         }
 
